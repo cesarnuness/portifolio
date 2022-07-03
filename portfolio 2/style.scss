@@ -124,3 +124,18 @@ nav li:first-child {
   flex-basis: 100%;
   text-align: center;
 }
+
+nav [class*="fa-"] {
+  font-size: 150%;
+  color: var(--aqua);
+}
+
+nav [class*="fa-"]:hover {
+  color: var(--hotmag);
+  transition: all 0.3s ease-in-out;
+}
+
+nav h1 [class*="fa-"] {
+  font-size: 100%;
+  color: var(--aqua);
+}
