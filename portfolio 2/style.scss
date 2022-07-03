@@ -139,3 +139,52 @@ nav h1 [class*="fa-"] {
   font-size: 100%;
   color: var(--aqua);
 }
+
+.button {
+  background-color: var(--magenta);
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.button:hover {
+  color: var(--white);
+  background-color: var(--hotmag);
+  transition: all 0.3s ease-in-out;
+}
+
+@media (min-width: 850px) {
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  nav a {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+  }
+  nav li:first-child {
+    flex-basis: auto;
+    text-align: left;
+    margin-right: auto;
+  }
+  nav li:last-child {
+    flex-basis: auto;
+    text-align: right;
+  }
+}
+
+footer [class*="fa-"] {
+  font-size: 200%;
+  color: var(--hotmag);
+  transition: all 0.3s ease-in-out;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
