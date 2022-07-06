@@ -39,6 +39,7 @@ h1,
 h2,
 h3 {
   margin: 0;
+  padding: 0;
 }
 
 a {
@@ -50,8 +51,20 @@ a:hover {
   text-decoration: none;
 }
 
+img {
+  width: 100%;
+}
+
+.gradient {
+  background: -webkit-gradient(linear, left top, right top, from(#ff17e4), to(#66fbfb));
+  background: linear-gradient(90deg, #ff17e4 0%, #66fbfb 100%);
+  height: 2px;
+}
+
 #intro {
-  padding-bottom: 10rem;
+  padding: 4rem 1rem 10rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 #intro p {
@@ -76,7 +89,6 @@ a:hover {
 }
 
 #contact {
-  background-color: var(--plum);
   width: 400px;
   text-align: center;
   margin: 0 auto;
@@ -85,6 +97,15 @@ a:hover {
 
 #contact p:last-child {
   margin-top: 3rem;
+}
+
+.section-plum {
+  width: 100%;
+  background-color: var(--plum);
+}
+
+.section-dkblue {
+  background-color: var(--dkblue);
 }
 
 nav {
@@ -156,6 +177,9 @@ nav h1 [class*="fa-"] {
   background-color: var(--magenta);
   padding: 0.5rem;
   border-radius: 5px;
+  font-family: var(--mono);
+  text-decoration: none;
+  color: white;
 }
 
 .button:hover {
@@ -187,6 +211,11 @@ nav h1 [class*="fa-"] {
   }
 }
 
+footer {
+  text-align: center;
+  padding: 4rem 0;
+}
+
 footer [class*="fa-"] {
   font-size: 200%;
   color: var(--hotmag);
@@ -194,10 +223,16 @@ footer [class*="fa-"] {
   transition: all 0.3s ease-in-out;
 }
 
+footer [class*="fa-"]:hover {
+  color: var(--aqua);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
 footer ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 2rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -208,9 +243,127 @@ footer ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   gap: 3rem;
+}
+
+.projects {
+  padding: 4rem 1rem;
+}
+
+.projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: calc(2.5rem * 1.5);
+}
+
+.projects h3 {
+  color: var(--aqua);
+}
+
+.projects h4 {
+  font-size: 1rem;
+  font-family: var(--mono);
+  margin-bottom: calc(1.5rem * 1.5);
+  padding: 0;
+  margin: 0;
+}
+
+.blackbox {
+  background-color: var(--black);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: var(--white);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.projects ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.projects img {
+  margin: 2rem 0 4rem 0;
+  border-left: 1px solid var(--aqua);
+  border-top: 1px solid var(--aqua);
+  border-radius: 25px;
+  padding: 1rem;
+}
+
+@media (min-width: 550px) {
+  h2 {
+    padding-left: 4rem;
+  }
+  .projects {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  article {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[10];
+        grid-template-columns: repeat(10, 1fr);
+    gap: 1rem;
+    padding: 0rem 4rem;
+  }
+  .projects img {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 5;
+    grid-column: 1/6;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+  }
+  .text {
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 6;
+    grid-column: 5/11;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    text-align: right;
+  }
+  .projects ul {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .projects .reverse .text {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+    grid-column: 1/7;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    text-align: left;
+  }
+  .projects .reverse img {
+    -ms-grid-column: 6;
+    -ms-grid-column-span: 5;
+    grid-column: 6/11;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+  }
+  .projects .reverse ul {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
 }
 /*# sourceMappingURL=style.css.map */
